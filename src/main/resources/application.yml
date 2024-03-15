@@ -1,0 +1,63 @@
+server:
+  port: 443
+  ssl:
+    key-store: classpath:shouhuxingguang.cn.pfx
+    key-store-password: lbplsbjq
+    key-store-type: PKCS12
+  tomcat:
+    uri-encoding: UTF-8
+
+servlet:
+  encoding:
+    charset: UTF-8
+    force: true
+    enabled: true
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.100.249.130:3306/star?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Xavier_123_08_
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    database: 0
+    host: 47.100.249.130
+    port: 6379
+    password: 123456
+    timeout: 1000
+
+mybatis-plus:
+  global-config:
+    db-config:
+      field-strategy: not_null
+  configuration:
+    map-underscore-to-camel-case: true
+
+mini-app:
+  app-id: wx6edd812c2de9d851
+  app-secret: b4aec9964ab809cc10b18811180c10d5
+logback:
+  dir: logs
+  filename:
+    all: springboot-base-frame-all
+    info: springboot-base-frame-info
+    warn: springboot-base-frame-warn
+    error: springboot-base-frame-error
+  maxhistory: 10
+  maxfilesize: 100MB
+  level: debug
+  charset: UTF-8
+  CONSOLE_LOG_PATTERN: '%d{yyyy-MM-dd HH:mm:ss.SSS} %boldYellow([%thread]) %highlight(%-5level) %boldGreen(%logger{50}) - %msg%n'
+  FILE_LOG_PATTERN: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n'
+
+swagger:
+  enable: true
